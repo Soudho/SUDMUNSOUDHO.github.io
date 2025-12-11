@@ -1,138 +1,92 @@
-/* --- VARIABLES FOR EASY TUNING --- */
-:root {
-  --bg-color: #050505;        /* Deepest Black */
-  --card-bg: rgba(25, 25, 25, 0.6); /* Glassy Dark Gray */
-  --text-main: #e0e0e0;       /* Off-white for readability */
-  --text-muted: #a0a0a0;      /* Gray for dates/less important info */
-  --accent-color: #ff3b3b;    /* Bright Neon Red */
-  --accent-glow: rgba(255, 59, 59, 0.4); /* Red Glow */
-  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAUi-qNiXg7eU0.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
-
-/* --- TYPOGRAPHY --- */
-/* (Keeping your Lato font imports) */
-@font-face { font-family: 'Lato'; font-style: italic; font-weight: 400; src: url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAUi-qNiXg7eU0.woff2) format('woff2'); }
-@font-face { font-family: 'Lato'; font-style: normal; font-weight: 400; src: url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2'); }
-@font-face { font-family: 'Lato'; font-style: normal; font-weight: 700; src: url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwaPGQ3q5d0.woff2) format('woff2'); }
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAXC-qNiXg7Q.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwaPGQ3q5d0.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
 body {
-  font-family: 'Lato', 'Segoe UI', sans-serif;
-  font-size: 15px;
-  background-color: var(--bg-color);
-  color: var(--text-main);
-  margin: 0;
-  padding: 40px 0;
-  /* Subtle background pattern */
-  background-image: radial-gradient(circle at 50% 0%, #1a0505 0%, #000000 70%);
-}
-
-/* --- LINKS & ACCENTS --- */
-a {
-  color: var(--text-main);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: var(--transition);
-}
-
-a:hover {
-  color: var(--accent-color);
-  text-shadow: 0 0 10px var(--accent-glow);
-}
-
-strong, b {
-  color: var(--accent-color);
-  font-weight: 700;
-}
-
-/* --- HEADINGS --- */
-h1, .name-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--text-main);
-  letter-spacing: -0.5px;
-  margin-bottom: 10px;
-}
-
-h2 {
-  font-size: 1.5rem;
-  color: var(--accent-color);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  border-bottom: 1px solid #333;
-  padding-bottom: 10px;
-  margin-top: 40px;
-  margin-bottom: 20px;
-}
-
-/* --- PROJECT CARDS (The Sophisticated Part) --- */
-/* We target the table rows to look like cards */
-tr.project-row {
-  transition: var(--transition);
-  border-radius: 12px;
-}
-
-tr.project-row:hover {
-  background-color: var(--card-bg);
-  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
-  transform: translateY(-3px); /* Subtle lift effect */
-}
-
-/* Images styling */
-.project-img-container {
-  overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  border: 1px solid #222;
-}
-
-.project-img-container img {
-  display: block;
-  transition: transform 0.5s ease;
-}
-
-/* Zoom image slightly on hover */
-tr.project-row:hover .project-img-container img {
-  transform: scale(1.05);
-}
-
-/* --- PROFILE IMAGE --- */
-.profile-img {
-  width: 100%;
-  max-width: 100%;
-  border-radius: 50%;
-  border: 2px solid #333;
-  transition: var(--transition);
-  filter: grayscale(80%); /* Artistic grayscale */
-}
-
-.profile-img:hover {
-  filter: grayscale(0%); /* Color on hover */
-  border-color: var(--accent-color);
-  box-shadow: 0 0 20px var(--accent-glow);
-  transform: rotate(3deg);
-}
-
-/* --- TEXT FORMATTING --- */
-.papertitle {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--text-main);
-  display: inline-block;
-  margin-bottom: 5px;
-}
-
-tr.project-row:hover .papertitle {
-  color: var(--accent-color);
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+  background-color: #ffffff;
 }
 
 p {
-  color: var(--text-sub);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
-.sub-text {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  margin-bottom: 10px;
-  display: block;
+a {
+  color: #1772d0;
+  text-decoration: none;
+}
+
+a:focus,
+a:hover {
+  color: #f09228;
+  text-decoration: none;
+}
+
+h2 {
+  margin: 0;
+  font-weight: normal;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 22px;
+}
+
+strong {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Image fading class structure */
+.one {
+  position: relative;
+}
+.two {
+  position: absolute;
+  transition: opacity 0.2s ease-in-out;
+  opacity: 0;
 }
